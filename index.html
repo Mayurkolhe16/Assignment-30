@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bulb Toggler</title>
-</head>
-<body>
-    
-</body>
+    <style>
+      body {
+        background-image: linear-gradient(
+          to right,
+          rgb(9, 10, 9),
+          violet
+        );
+      }
+      h1 {
+        text-align: center;
+        margin-top: 70px;
+        font-size: 50px;
+        color: rgb(2, 12, 31);
+      }
+
+      .bulb-img {
+        height: 300px;
+        display: block;
+        margin: 50px auto;
+      }
+
+      .btn-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 45px;
+        margin-top: 100px;
+      }
+
+      .btn {
+        width: 130px;
+        height: 40px;
+        border: 3px wheat solid;
+      }
+
+      .btn-off {
+        background-color: black;
+        color: white;
+      }
+
+      .btn-on {
+        background-color: yellow;
+        color: black;
+      }
+
+      .btn-on:hover {
+        filter: drop-shadow(1px 1px 20px yellow);
+      }
+
+      .btn-off:hover {
+        filter: drop-shadow(1px 1px 20px black);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Bulb ON_OFF</h1>
+
+    <img src="./bulb-off.png" class="bulb-img" id="img-bulb" />
+
+    <div class="btn-container">
+      <button type="button" class="btn btn-on" onclick="bulbOn()">ON</button>
+
+      <button type="button" class="btn btn-off" onclick="bulbOff()">OFF</button>
+    </div>
+    <script>
+      function bulbOn() {
+        const bulbElement = document.getElementById("img-bulb");
+        bulbElement.src = "bulb-on.png";
+      }
+
+      function bulbOff() {
+        const bulbElement = document.getElementById("img-bulb");
+        bulbElement.src = "bulb-off.png";
+      }
+    </script>
+  </body>
 </html>
